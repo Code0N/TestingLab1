@@ -16,19 +16,22 @@ namespace LakeOfSorrowProduction
         {
             this.x = x_param;
             this.y = y_param;
-            this.a = this.x[1] - this.x[0];
-            this.b = this.y[1] - this.y[2];
-        }
-
-        public double Diagonal()
-        {
+            this.a = Math.Sqrt(Math.Pow(this.x[0] - this.x[1], 2) + Math.Pow(this.y[0] - this.y[1], 2));
+            this.b = Math.Sqrt(Math.Pow(this.x[2] - this.x[1], 2) + Math.Pow(this.y[2] - this.y[1], 2));
             if ((x.Length != 4) || (y.Length != 4))
             {
                 throw new ArgumentException("Неверно заданы вершины, это не прямоугольник");
             }
+            if (Math.Abs((this.x[1] - this.x[0]) * (this.x[2] - this.x[1]) + (this.y[1] - this.y[0]) * (this.y[2] - this.y[1])) > 1e-10)
+            {
+                throw new ArgumentException("Это не прямоугольник");
+            }
+            //this.a = this.x[1] - this.x[0];
+            //this.b = this.y[1] - this.y[2];
+        }
 
-
-
+        public double Diagonal()
+        {
             return Math.Sqrt(Math.Pow(this.b, 2) + Math.Pow(this.a, 2)); //Эксепшны сверху
         }
 

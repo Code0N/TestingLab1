@@ -8,7 +8,7 @@ namespace LakeOfSorrowProduction
 {
     public class StringFormatter
     {
-        string ShortFileString(string path)
+        public string ShortFileString(string path)
         {
             if (path == String.Empty)
                 return path;

@@ -52,7 +52,7 @@
             this.doItButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.doIt2Button = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.resultArLabel = new System.Windows.Forms.Label();
             this.mainTabControl.SuspendLayout();
             this.rectangleTab.SuspendLayout();
             this.stringFormatterTab.SuspendLayout();
@@ -110,7 +110,7 @@
             // 
             // arrayProcessorTab
             // 
-            this.arrayProcessorTab.Controls.Add(this.label5);
+            this.arrayProcessorTab.Controls.Add(this.resultArLabel);
             this.arrayProcessorTab.Controls.Add(this.doIt2Button);
             this.arrayProcessorTab.Controls.Add(this.label4);
             this.arrayProcessorTab.Location = new System.Drawing.Point(4, 22);
@@ -128,7 +128,6 @@
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Координаты X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -138,7 +137,6 @@
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Координаты Y";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbx1
             // 
@@ -263,6 +261,7 @@
             this.doItButton.TabIndex = 4;
             this.doItButton.Text = "DO IT!";
             this.doItButton.UseVisualStyleBackColor = true;
+            this.doItButton.Click += new System.EventHandler(this.doItButton_Click);
             // 
             // label4
             // 
@@ -282,15 +281,16 @@
             this.doIt2Button.TabIndex = 1;
             this.doIt2Button.Text = "Сделать";
             this.doIt2Button.UseVisualStyleBackColor = true;
+            this.doIt2Button.Click += new System.EventHandler(this.doIt2Button_Click);
             // 
-            // label5
+            // resultArLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 183);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Результат";
+            this.resultArLabel.AutoSize = true;
+            this.resultArLabel.Location = new System.Drawing.Point(23, 183);
+            this.resultArLabel.Name = "resultArLabel";
+            this.resultArLabel.Size = new System.Drawing.Size(59, 13);
+            this.resultArLabel.TabIndex = 2;
+            this.resultArLabel.Text = "Результат";
             // 
             // mainForm
             // 
@@ -335,7 +335,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button doItButton;
         private System.Windows.Forms.Label pAnswerLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label resultArLabel;
         private System.Windows.Forms.Button doIt2Button;
         private System.Windows.Forms.Label label4;
     }

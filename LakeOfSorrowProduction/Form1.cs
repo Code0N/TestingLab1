@@ -16,16 +16,6 @@ namespace LakeOfSorrowProduction
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
@@ -61,6 +51,27 @@ namespace LakeOfSorrowProduction
             {
                 MessageBox.Show("Ошибка аргументов " + ex.Message);
             }
+        }
+
+        private void doItButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StringFormatter stringFormatter = new StringFormatter();
+                pAnswerLabel.Text = stringFormatter.ShortFileString(pathTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void doIt2Button_Click(object sender, EventArgs e)
+        {
+            int[] workArr = { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55 };
+            ArrayProcessor arrayProcessor = new ArrayProcessor();
+            int[] resultArr = arrayProcessor.SortAndFilter(workArr);
+            resultArLabel.Text = (string.Join(" ", resultArr.Select(x => x.ToString())));
         }
     }
 }

@@ -214,6 +214,7 @@
             this.rButton.TabIndex = 12;
             this.rButton.Text = "Расчитать";
             this.rButton.UseVisualStyleBackColor = true;
+            this.rButton.Click += new System.EventHandler(this.rButton_Click);
             // 
             // pathTextBox
             // 

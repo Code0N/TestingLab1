@@ -14,7 +14,6 @@ namespace LakeOfSorrowProduction
                 return path;
             if (path == null)
                 throw new NullReferenceException("String is Null");
-
             return (Path.ChangeExtension(Path.GetFileName(path), ".TMP")).ToUpperInvariant();
         }
     }

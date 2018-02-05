@@ -12,6 +12,11 @@ namespace LakeOfSorrowProduction
             SetVertices(x_param, y_param);
         }
 
+        public Rectangle()
+        {
+            
+        }
+
         public void SetVertices(double[] x_param, double[] y_param) //Торвальдс покарает меня за этот код
         {
             this.x = x_param;

@@ -40,5 +40,15 @@ namespace LakeOfSorrowNUnitTests
             //rectangle.SetVertices(x, y);
             Assert.Throws<ArgumentException>(() => rectangle.SetVertices(x, y));
         }
+
+        //Тесты коллекций
+
+        [Test]
+        public void CollTest()
+        {
+            ArrayProcessor arrayProcessor = new ArrayProcessor();
+            CollectionAssert.AreEqual(new int[] { 4444, 5457 }, arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55 }));
+            CollectionAssert.AreEqual(new int[] { 4444, 5457, 3333 }, arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55, 3333 }));
+        }
     }
 }

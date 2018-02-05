@@ -73,5 +73,10 @@ namespace LakeOfSorrowProduction
             int[] resultArr = arrayProcessor.SortAndFilter(workArr);
             resultArLabel.Text = (string.Join(" ", resultArr.Select(x => x.ToString())));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

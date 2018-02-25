@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LakeOfSorrowProduction;
 
@@ -11,7 +12,28 @@ namespace LakeOfSorrowMSTest
         readonly StringFormatter stringFormatter = new StringFormatter();
 
         [TestMethod]
-        public void TestString()
+        public void TestUpperCase()
+        {
+            /*
+                                              _       _     
+                                | |     | |    
+                  ___ _ __ _   _| |_ ___| |__  
+                 / __| '__| | | | __/ __| '_ \ 
+                | (__| |  | |_| | || (__| | | |
+                 \___|_|   \__,_|\__\___|_| |_|
+                               
+                               
+             */
+
+            // ACT
+            string res = stringFormatter.ShortFileString("C:\\Users\\UselessFile.txt");
+
+            // ASSERT
+            Assert.AreEqual(14, res.Count(Char.IsUpper));
+        }
+
+        [TestMethod]
+        public void TestFinalString()
         {
             // ACT
             string res = stringFormatter.ShortFileString("C:\\Users\\Useless File.txt");
@@ -32,7 +54,7 @@ namespace LakeOfSorrowMSTest
 
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
-        public void TestExept()
+        public void TestExeption()
         {
             stringFormatter.ShortFileString(null);
         }

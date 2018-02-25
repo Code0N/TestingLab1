@@ -12,6 +12,7 @@ namespace LakeOfSorrowNUnitTests
     public class TestClass
     {
         readonly Rectangle rectangle = new Rectangle();
+        ArrayProcessor arrayProcessor = new ArrayProcessor();
         [Test]
         public void TestVertices1()
         {
@@ -33,7 +34,7 @@ namespace LakeOfSorrowNUnitTests
         }
 
         [Test]
-        public void ExeptionTest1()
+        public void VerticesExeptionTest()
         {
             double[] x = { 10, 20, 30, 40 };
             double[] y = { 50, 60, 70, 80 };
@@ -44,11 +45,16 @@ namespace LakeOfSorrowNUnitTests
         //Тесты коллекций
 
         [Test]
-        public void CollTest()
+        public void CollSortedTest()
         {
-            ArrayProcessor arrayProcessor = new ArrayProcessor();
+            CollectionAssert.IsOrdered(arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55 }));
+        }
+
+        [Test]
+        public void CollFilteredTest()
+        {
             CollectionAssert.AreEqual(new int[] { 4444, 5457 }, arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55 }));
-            CollectionAssert.AreEqual(new int[] { 4444, 5457, 3333 }, arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55, 3333 }));
+            CollectionAssert.AreEqual(new int[] { 3333, 4444, 5457 }, arrayProcessor.SortAndFilter(new int[] { 1, 2, 4444, 333, 5457, -10, -140, -4545, -777, 0, 55, 3333 }));
         }
     }
 }

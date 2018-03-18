@@ -45,7 +45,7 @@ namespace LakeOfSorrowProduction
             try
             {
                 Rectangle rectangle = new Rectangle(xses, yses);
-                AnswerLabel.Text = (rectangle.Diagonal()).ToString();
+                AnswerLabel.Text = Math.Round((rectangle.Diagonal()), 1).ToString();
             }
             catch (ArgumentException ex)
             {

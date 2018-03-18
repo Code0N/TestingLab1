@@ -54,7 +54,7 @@ namespace LakeOfSorrowMSTest
 
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
-        public void TestExeption()
+        public void TestNullStringExeption()
         {
             stringFormatter.ShortFileString(null);
         }

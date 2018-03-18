@@ -13,36 +13,40 @@ namespace LakeOfSorrowNUnitTests
     {
         readonly Rectangle rectangle = new Rectangle();
         ArrayProcessor arrayProcessor = new ArrayProcessor();
+        //[Test]
+        //public void TestVertices1()
+        //{
+        //    double[] x = { -2, 6, 6, 3 };
+        //    double[] y = { 4, 4, -2, -3 };
+        //    rectangle.SetVertices(x, y);
+        //    double res = rectangle.Diagonal();
+        //    Assert.AreEqual(10, res);
+        //}
+
+        //[Test]
+        //public void TestVertices2()
+        //{
+        //    double[] x = { -2, -2, 4, 4 };
+        //    double[] y = { -3, 5, 5, -5 };
+        //    rectangle.SetVertices(x, y);
+        //    double res = rectangle.Diagonal();
+        //    Assert.AreEqual(10, res);
+        //}
+
         [Test]
         public void TestVertices1()
         {
-            double[] x = { -2, 6, 6, 3 };
-            double[] y = { 4, 4, -2, -3 };
-            rectangle.SetVertices(x, y);
-            double res = rectangle.Diagonal();
-            Assert.AreEqual(10, res);
-        }
-
-        [Test]
-        public void TestVertices2()
-        {
-            double[] x = { -2, -2, 4, 4 };
-            double[] y = { -3, 5, 5, -5 };
-            rectangle.SetVertices(x, y);
-            double res = rectangle.Diagonal();
-            Assert.AreEqual(10, res);
-        }
-
-        [Test]
-        public void TestVerticesT()
-        {
             double[] x = { 0, 0, 4, 4 };
             double[] y = { 0, 3, 0, 3 };
+
+            //double[] x = { 1, 1, 4, 4 };
+            //double[] y = { 1, 3, 3, 1 };
+
             //double[] x = { 4, 4, 0, 0 };
             //double[] y = { 3, 0, 3, 0 };
             rectangle.SetVertices(x, y);
             double res = rectangle.Diagonal();
-            Assert.AreEqual(5, res);
+            Assert.AreEqual(3,6, Math.Round(res, 1));
         }
 
         [Test]
@@ -50,6 +54,15 @@ namespace LakeOfSorrowNUnitTests
         {
             double[] x = { 10, 20, 30, 40 };
             double[] y = { 50, 60, 70, 80 };
+            //rectangle.SetVertices(x, y);
+            Assert.Throws<ArgumentException>(() => rectangle.SetVertices(x, y));
+        }
+
+        [Test]
+        public void VerticesEmptyElementsTest()
+        {
+            double[] x = { 10, 20, 30 };
+            double[] y = { 50, 80 };
             //rectangle.SetVertices(x, y);
             Assert.Throws<ArgumentException>(() => rectangle.SetVertices(x, y));
         }

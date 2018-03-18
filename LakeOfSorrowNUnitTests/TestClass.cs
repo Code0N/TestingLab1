@@ -34,6 +34,18 @@ namespace LakeOfSorrowNUnitTests
         }
 
         [Test]
+        public void TestVerticesT()
+        {
+            double[] x = { 0, 0, 4, 4 };
+            double[] y = { 0, 3, 0, 3 };
+            //double[] x = { 4, 4, 0, 0 };
+            //double[] y = { 3, 0, 3, 0 };
+            rectangle.SetVertices(x, y);
+            double res = rectangle.Diagonal();
+            Assert.AreEqual(5, res);
+        }
+
+        [Test]
         public void VerticesExeptionTest()
         {
             double[] x = { 10, 20, 30, 40 };
